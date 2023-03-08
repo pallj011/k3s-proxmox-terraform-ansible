@@ -1,0 +1,21 @@
+pm_host         = "192.168.3.110"  # Whichever host you use to access the Proxmox API
+pm_password     = "password"       # Password for pm_user. pm_user defaults to root. pm_user also has to be a pam acct. 
+pm_node_name    = "pve"            # What node to deploy the K8s on
+pm_tls_insecure = true
+pvt_key         = "~/.ssh/proxk3s" # Must create a key pair for use.
+num_k3s_masters     = 1
+num_k3s_masters_mem = 4096
+num_k3s_nodes       = 2
+num_k3s_nodes_mem   = 4096
+tamplate_vm_name    = "ubuntu-focal-cloudinit-template"
+# Adjust to suit your network
+gateway             = "192.168.1.1"
+master_ips = [
+  "192.168.3.81"
+]
+worker_ips = [
+  "192.168.3.91",
+  "192.168.3.92",
+  "192.168.3.93",
+  "192.168.3.94",
+]
